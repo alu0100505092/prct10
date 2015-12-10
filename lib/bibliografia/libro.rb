@@ -37,8 +37,8 @@ class Libro < PublicacionesPeriodicas
         print "\t"
         puts("#{@f_pub}")
             
-        # @isbn.each{ |i, valor| 
-        # print "\t"
-        # puts("#{i}  #{valor}") } 
+        @isbn.each{ |i, valor| 
+        print "\t"
+        puts("#{i}  #{valor}") } 
     end 
 end
