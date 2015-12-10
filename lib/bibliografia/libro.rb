@@ -1,31 +1,44 @@
 class Libro < PublicacionesPeriodicas
     
-    attr_accessor :serie, :editorial, :edicion, :isbn
-    def initialize(args)
-        @serie = args[:serie]
-        @editorial = args[:editorial]
-        @edicion = args[:edicion]
-        @isbn = args[:isbn]
+    attr_accessor :autor, :titulo, :f_pub, :serie, :editorial, :edicion, :isbn
+    def initialize(autor,titulo,fecha,serie,editorial,edicion,isbn)
+       @autor=autor
+       @titulo=titulo
+       @f_pub=f_pub
+       @serie = serie
+       @editorial = editorial
+       @edicion = edicion
+       @isbn = isbn
     end
-    
     
     def to_s
-        names =""
-        isbns =""
-        i=0
-        while i < @autor.count
-            if i != @autor.count-1
-                names= names + "#{@autor[i]}, "
+        puts ""
+        for i in 0..@autor.size-1
+            if i == @autor.size-2
+                print("#{@autor[i]}  &  ")
             else
-                names= names + "#{@autor[i]}."
+                print("#{@autor[i]}, ")
             end
-            i=i+1
         end
-        i=0
-        while i < @isbn.count
-            isbns= isbns + "#{@isbn[i]}\n"
-            i=i+1
-        end
-        "#{names}\n#{@titulo}\n#{@serie}\n#{@editorial};\n#{@edicion}\n(#{@f_pub})\n#{isbns}"
-    end
+        
+        puts""
+        print "\t"
+        puts("#{@titulo}")
+            
+        print "\t"
+        puts("#{@serie}")
+        
+        print "\t"
+        puts("#{@editorial}")
+        
+        print "\t"
+        puts("#{@edicion}")
+        
+        print "\t"
+        puts("#{@f_pub}")
+            
+        # @isbn.each{ |i, valor| 
+        # print "\t"
+        # puts("#{i}  #{valor}") } 
+    end 
 end

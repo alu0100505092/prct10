@@ -1,17 +1,33 @@
-class PublicacionesPeriodicas
+class PublicacionesPeriodicas < Imprimir
 include Comparable  
-    attr_accessor :referencia, :autor, :titulo, :num_pag, :f_pub
+    attr_accessor :autor, :titulo, :f_pub, :edicion, :editorial
     
     def  initialize(args)
-        @referencia = args[:referencia]
         @autor = args[:autor]
         @titulo = args[:titulo]
-        @num_pag = args[:num_pag]
+        @editorial = args[:editorial]
+        @edicion = args[:edicion]
+        @serie = args[:serie]
         @f_pub = args[:f_pub]
+        
     end
     
     
     def <=>(other)
-        self.referencia <=> other.referencia
-    end 
+        if (@autor[0] != other.autor[0])
+                @autor<=> other.autor
+        else
+            if(@autor.size==1) || (other.autor.size ==1)
+                @autor.size <=> other.autor.size
+            else
+                if(@f_pub != other.fecha)
+                    @f_pub <=> other.fecha
+                else
+                    @titulo <=> other.titulo
+                end
+            end
+        end
+    end
+    
+    
 end  

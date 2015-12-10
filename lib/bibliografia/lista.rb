@@ -45,11 +45,11 @@ class Lista
         @fin.value
     end
     
-    def each(&block)
-        tempo = @inicio
-        while tempo != nil
-            block.call(tempo)
-            tempo=tempo.next
+    def each 
+        aux = @inicio
+        while aux != nil
+          yield aux.value  
+          aux = aux.next 
         end
     end
 end
