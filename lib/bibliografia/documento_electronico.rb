@@ -1,6 +1,7 @@
 class DocumentoElectronico < PublicacionesPeriodicas
-    def initialize(args)
-        super(args)
-        @sitio_pub = args[:sitio_pub]
-    end    
+    attr_accessor :sitio_pub 
+    def initialize(autor,titulo,f_pub,sitio_pub)
+        super(autor,titulo,f_pub)
+        @sitio_pub = sitio_pub
+    end
 end

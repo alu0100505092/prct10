@@ -1,15 +1,11 @@
 class PublicacionesPeriodicas < Imprimir
 include Comparable  
-    attr_accessor :autor, :titulo, :f_pub, :edicion, :editorial
+    attr_accessor :autor, :titulo, :f_pub
     
-    def  initialize(args)
-        @autor = args[:autor]
-        @titulo = args[:titulo]
-        @editorial = args[:editorial]
-        @edicion = args[:edicion]
-        @serie = args[:serie]
-        @f_pub = args[:f_pub]
-        
+    def initialize(autor,titulo,f_pub)
+       @autor=autor
+       @titulo=titulo
+       @f_pub=f_pub
     end
     
     

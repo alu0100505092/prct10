@@ -1,14 +1,11 @@
 class Libro < PublicacionesPeriodicas
-    
-    attr_accessor :autor, :titulo, :f_pub, :serie, :editorial, :edicion, :isbn
-    def initialize(autor,titulo,fecha,serie,editorial,edicion,isbn)
-       @autor=autor
-       @titulo=titulo
-       @f_pub=f_pub
-       @serie = serie
-       @editorial = editorial
-       @edicion = edicion
-       @isbn = isbn
+    attr_accessor :serie, :editorial, :edicion, :isbn
+    def initialize(autor,titulo,f_pub,serie,editorial,edicion,isbn)
+        super(autor,titulo,f_pub)
+        @serie = serie
+        @editorial = editorial
+        @edicion = edicion
+        @isbn = isbn
     end
     
     def to_s
