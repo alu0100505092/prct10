@@ -24,6 +24,4 @@ include Comparable
             end
         end
     end
-    
-    
 end  
